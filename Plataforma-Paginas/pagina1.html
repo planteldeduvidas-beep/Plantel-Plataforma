@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Página</title>
+    <link href="pagina1.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="layout">
+        <aside class="sidebar">
+            <img src="../logolabas.png" alt="Logo Plantel" class="logo">
+
+            <nav class="menu">
+                <button class="active" data-section="home">Home</button>
+                <button data-section="editais">Editais</button>
+                <button data-section="provas">Provas</button>
+                <button data-section="calendario">Calendário</button>
+                <button data-section="registros">Registros</button>
+                <button data-section="configuracoes">Configurações</button>
+            </nav>
+        </aside>
+
+        <main class="content">
+            <div class="topbar">
+                <h1 id="pageTitle">Home</h1>
+            </div>
+
+            <section id="home" class="section active">
+                <div class="hero">
+                    <h2>Boas-vindas vestibulando 🪖, o que iremos fazer hoje?</h2>
+                    <p>
+                        Acompanhe editais, organize provas, visualize datas importantes e mantenha
+                        seu histórico de análises em um só lugar. Tudo pensado para facilitar sua
+                        preparação e leitura dos documentos.
+                    </p>
+                </div>
+
+                <div class="cards">
+                    <article class="card">
+                        <h3>Editais em destaque</h3>
+                        <p>
+                            Consulte rapidamente editais recentes, filtre por banca, cargo, nível
+                            de escolaridade e situação do concurso.
+                        </p>
+                    </article>
+
+                    <article class="card">
+                        <h3>Últimas provas</h3>
+                        <p>
+                            Revise provas anteriores, compare estruturas e identifique padrões
+                            cobrados pelas principais bancas.
+                        </p>
+                    </article>
+
+                    <article class="card">
+                        <h3>Seu planejamento</h3>
+                        <p>
+                            Use o calendário e os registros para acompanhar prazos, simulados e
+                            evolução dos estudos de forma centralizada.
+                        </p>
+                    </article>
+                </div>
+
+                <div class="status">
+                    Status: 3 editais monitorados, 12 provas salvas e 5 eventos cadastrados.
+                </div>
+            </section>
+
+            <section id="editais" class="section">
+                <div class="section-header">
+                    <p>
+                        Busque um edital específico e refine os resultados com filtros simulados.
+                    </p>
+                </div>
+
+                <div class="panel">
+                    <div class="filters-grid">
+                        <div class="field">
+                            <label for="buscaEdital">Buscar edital</label>
+                            <input type="text" id="buscaEdital" placeholder="Ex: ESA 2026, PMAM, EsPCEx">
+                        </div>
+
+                        <div class="field">
+                            <label for="filtroBanca">Banca</label>
+                            <select id="filtroBanca">
+                                <option value="">Todas</option>
+                                <option>FGV</option>
+                                <option>Cebraspe</option>
+                                <option>Vunesp</option>
+                                <option>AOCP</option>
+                            </select>
+                        </div>
+
+                        <div class="field">
+                            <label for="filtroArea">Área</label>
+                            <select id="filtroArea">
+                                <option value="">Todas</option>
+                                <option>Militar</option>
+                                <option>Segurança Pública</option>
+                                <option>Administrativa</option>
+                                <option>Saúde</option>
+                            </select>
+                        </div>
+
+                        <div class="field">
+                            <label for="filtroStatus">Status</label>
+                            <select id="filtroStatus">
+                                <option value="">Todos</option>
+                                <option>Aberto</option>
+                                <option>Em análise</option>
+                                <option>Encerrado</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="actions-row">
+                        <button class="action-btn" id="btnFiltrarEditais">Aplicar filtros</button>
+                        <button class="action-btn secondary" id="btnLimparEditais">Limpar</button>
+                    </div>
+                </div>
+
+                <div class="cards" id="listaEditais">
+
+                    <article class="card edital-card" data-nome="EsPCEx 2026" data-banca="Cebraspe" data-area="Militar"
+                        data-status="Em análise">
+                        <h3>EsPCEx 2026</h3>
+                        <p><strong>Banca:</strong> Cebraspe</p>
+                        <p><strong>Área:</strong> Militar</p>
+                        <p><strong>Status:</strong> Em análise</p>
+                        <p>
+                            Documento cadastrado para leitura estrutural, com foco em disciplinas,
+                            pesos e critérios de classificação.
+                        </p>
+                    </article>
+                </div>
+            </section>
+
+            <section id="provas" class="section">
+                <div class="section-header">
+                    <h2>Provas</h2>
+                    <p>
+                        Busque provas específicas e refine os resultados por banca, disciplina e nível.
+                    </p>
+                </div>
+
+                <div class="panel">
+                    <div class="filters-grid">
+                        <div class="field">
+                            <label for="buscaProva">Buscar prova</label>
+                            <input type="text" id="buscaProva" placeholder="Ex: ESA Matemática, EsPCEx Português">
+                        </div>
+
+                        <div class="field">
+                            <label for="filtroBancaProva">Banca</label>
+                            <select id="filtroBancaProva">
+                                <option value="">Todas</option>
+                                <option>FGV</option>
+                                <option>Cebraspe</option>
+                                <option>Vunesp</option>
+                                <option>AOCP</option>
+                            </select>
+                        </div>
+
+                        <div class="field">
+                            <label for="filtroDisciplinaProva">Disciplina</label>
+                            <select id="filtroDisciplinaProva">
+                                <option value="">Todas</option>
+                                <option>Matemática</option>
+                                <option>Português</option>
+                                <option>História</option>
+                                <option>Geografia</option>
+                            </select>
+                        </div>
+
+                        <div class="field">
+                            <label for="filtroNivelProva">Nível</label>
+                            <select id="filtroNivelProva">
+                                <option value="">Todos</option>
+                                <option>Fácil</option>
+                                <option>Médio</option>
+                                <option>Avançado</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="actions-row">
+                        <button class="action-btn" id="btnFiltrarProvas">Aplicar filtros</button>
+                        <button class="action-btn secondary" id="btnLimparProvas">Limpar</button>
+                    </div>
+                </div>
+
+                <div class="cards" id="listaProvas">
+                    <article class="card prova-card" data-nome="ESA Matemática 2025" data-banca="FGV"
+                        data-disciplina="Matemática" data-nivel="Médio">
+                        <h3>ESA Matemática 2025</h3>
+                        <p><strong>Banca:</strong> FGV</p>
+                        <p><strong>Disciplina:</strong> Matemática</p>
+                        <p><strong>Nível:</strong> Médio</p>
+                        <p>
+                            Prova com foco em álgebra, geometria plana e interpretação de problemas matemáticos.
+                        </p>
+                    </article>
+
+                    <article class="card prova-card" data-nome="EsPCEx Português 2025" data-banca="Cebraspe"
+                        data-disciplina="Português" data-nivel="Avançado">
+                        <h3>EsPCEx Português 2025</h3>
+                        <p><strong>Banca:</strong> Cebraspe</p>
+                        <p><strong>Disciplina:</strong> Português</p>
+                        <p><strong>Nível:</strong> Avançado</p>
+                        <p>
+                            Questões voltadas para gramática, interpretação textual e análise de estruturas
+                            linguísticas.
+                        </p>
+                    </article>
+
+                    <article class="card prova-card" data-nome="PMAM História 2024" data-banca="Vunesp"
+                        data-disciplina="História" data-nivel="Fácil">
+                        <h3>PMAM História 2024</h3>
+                        <p><strong>Banca:</strong> Vunesp</p>
+                        <p><strong>Disciplina:</strong> História</p>
+                        <p><strong>Nível:</strong> Fácil</p>
+                        <p>
+                            Prova objetiva com temas de história do Brasil, história geral e interpretação cronológica.
+                        </p>
+                    </article>
+                </div>
+
+                <div class="status" id="resultadoFiltroProvas">
+                    Resultado: exibindo todas as provas cadastradas.
+                </div>
+            </section>
+
+            <section id="calendario" class="section">
+                <div class="section-header">
+                    <p>
+                        Organize inscrições, datas de prova, divulgação de resultados e revisões.
+                    </p>
+                </div>
+
+                <div class="cards">
+                    <article class="card">
+                        <h3>20/04 - Revisão geral</h3>
+                        <p>
+                            Revisão de matemática e português com foco em questões erradas da última semana.
+                        </p>
+                    </article>
+
+                    <article class="card">
+                        <h3>25/04 - Encerramento de inscrição</h3>
+                        <p>
+                            Prazo final para envio de documentos e confirmação de participação no processo seletivo.
+                        </p>
+                    </article>
+
+                    <article class="card">
+                        <h3>01/05 - Simulado completo</h3>
+                        <p>
+                            Aplicação de prova simulada com controle de tempo para medir desempenho.
+                        </p>
+                    </article>
+                </div>
+
+                <div class="status">
+                    Próximo evento: Revisão geral em 20/04.
+                </div>
+            </section>
+
+            <section id="registros" class="section">
+            </section>
+
+            <section id="configuracoes" class="section">
+                <div class="section-header">
+                    <p>
+                        Ajuste preferências da plataforma conforme sua rotina de estudos.
+                    </p>
+                </div>
+
+                <div class="cards">
+                    <article class="card">
+                        <h3>Perfil do estudante</h3>
+                        <p>
+                            Defina sua área de interesse principal, nível de escolaridade e objetivos de aprovação.
+                        </p>
+                    </article>
+
+                    <article class="card">
+                        <h3>Notificações</h3>
+                        <p>
+                            Ative alertas para novos editais, atualizações de cronograma e lembretes de revisão.
+                        </p>
+                    </article>
+
+                    <article class="card">
+                        <h3>Preferências de visualização</h3>
+                        <p>
+                            Personalize o modo de exibição dos cards, seções principais e organização do dashboard.
+                        </p>
+                    </article>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="pagina1.js"></script>
+</body>
+
+</html>
